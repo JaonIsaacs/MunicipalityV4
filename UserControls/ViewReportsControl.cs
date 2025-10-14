@@ -39,7 +39,10 @@ namespace MunicipalityV4.UserControls
                 rtbDetails.Clear();
             }
         }
-
+        /// <summary>
+        /// display issue details in text box
+        /// </summary>
+        /// <param name="issue"></param>
         private void DisplayDetails(Issue issue)
         {
             var sb = new StringBuilder();
@@ -63,13 +66,13 @@ namespace MunicipalityV4.UserControls
         {
             if (_selected == null) return;
 
-            // load ReportIssueControl and pass issue for editing
+            /// load ReportIssueControl and pass issue for editing
             var main = this.FindForm() as MainForm;
             if (main != null)
             {
                 var reportCtrl = new ReportIssueControl();
                 reportCtrl.LoadIssueForEdit(_selected);
-                main.LoadControl(reportCtrl); // uses public LoadControl
+                main.LoadControl(reportCtrl); /// uses public LoadControl
             }
         }
 
@@ -79,7 +82,7 @@ namespace MunicipalityV4.UserControls
             var confirm = MessageBox.Show("Delete this report?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (confirm != DialogResult.Yes) return;
 
-            var ok = IssueService.DeleteIssue(_selected.Id); // uses Guid
+            var ok = IssueService.DeleteIssue(_selected.Id); /// uses Guid
             if (ok)
             {
                 LoadReports();
@@ -91,7 +94,11 @@ namespace MunicipalityV4.UserControls
                 MessageBox.Show("Delete failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        /// <summary>
+        /// undo last delete action 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnUndo_Click(object sender, EventArgs e)
         {
             var ok = IssueService.UndoDelete();
@@ -105,7 +112,11 @@ namespace MunicipalityV4.UserControls
                 MessageBox.Show("No deleted reports to restore.", "Undo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        /// <summary>
+        /// upadte field status
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnUpdateStatus_Click(object sender, EventArgs e)
         {
             if (_selected == null) return;

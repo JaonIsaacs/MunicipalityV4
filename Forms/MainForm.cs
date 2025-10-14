@@ -11,14 +11,7 @@ namespace MunicipalityV4.Forms
             InitializeComponent();
         }
 
-        public void LoadControl(UserControl control)
-        {
-            panelMain.Controls.Clear();
-            control.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(control);
-        }
-
-        private void btnReportIssues_Click(object sender, EventArgs e)
+        private void btnReportIssue_Click(object sender, EventArgs e)
         {
             LoadControl(new ReportIssueControl());
         }
@@ -28,9 +21,16 @@ namespace MunicipalityV4.Forms
             LoadControl(new LocalEventsControl());
         }
 
-        private void btnViewReports_Click(object sender, EventArgs e)
+        public void LoadControl(UserControl control)
         {
-            LoadControl(new ViewReportsControl());
+            mainPanel.Controls.Clear();
+            control.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(control);
+        }
+
+        private void logoBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -24,7 +24,7 @@ namespace MunicipalityV4.UserControls
             cmbCategory.SelectedIndexChanged += (s, e) => UpdateProgressBar();
             txtDescription.TextChanged += (s, e) => UpdateProgressBar();
 
-            // these two must match the designer event wiring:
+            /// these two must match the designer event wiring (need to make sure no double link/button that does the same to reduse errors)
             btnAttach.Click += BtnAttach_Click;
             btnSubmit.Click += BtnSubmit_Click;
             btnClear.Click += BtnClear_Click;
@@ -67,7 +67,7 @@ namespace MunicipalityV4.UserControls
             }
             else
             {
-                // edit existing issue and persist with UpdateIssue
+                /// edit existing issue and persist with UpdateIssue
                 _editingIssue.Location = txtLocation.Text.Trim();
                 _editingIssue.Category = cmbCategory.SelectedItem.ToString();
                 _editingIssue.Description = txtDescription.Text.Trim();

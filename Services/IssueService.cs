@@ -58,7 +58,7 @@ namespace MunicipalityV4.Services
         }
 
         /// <summary>
-        /// Delete issue by Id, push onto deleted stack for undo. Returns true if deleted.
+        /// Delete issue by Id push onto deleted stack for undo. Returns true if deleted.
         /// </summary>
         public static bool DeleteIssue(Guid id)
         {
@@ -77,7 +77,7 @@ namespace MunicipalityV4.Services
         }
 
         /// <summary>
-        /// Undo last delete; returns true if there was something to restore.
+        /// Undo last delete returns true if there was something to restore.
         /// </summary>
         public static bool UndoDelete()
         {

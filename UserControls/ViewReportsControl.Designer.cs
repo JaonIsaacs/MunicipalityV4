@@ -33,21 +33,21 @@
 
             this.SuspendLayout();
 
-            // Reports
+            /// Reports
             this.lblReports.Text = "Submitted Reports";
             this.lblReports.Location = new System.Drawing.Point(20, 20);
             this.lstReports.Location = new System.Drawing.Point(20, 50);
             this.lstReports.Size = new System.Drawing.Size(380, 460);
             this.lstReports.SelectedIndexChanged += new System.EventHandler(this.LstReports_SelectedIndexChanged);
 
-            // Details
+            /// Details
             this.lblDetails.Text = "Details";
             this.lblDetails.Location = new System.Drawing.Point(420, 20);
             this.rtbDetails.Location = new System.Drawing.Point(420, 50);
             this.rtbDetails.Size = new System.Drawing.Size(540, 300);
             this.rtbDetails.ReadOnly = true;
 
-            // Buttons and status
+            /// Buttons and status
             this.btnEdit.Text = "Edit";
             this.btnEdit.Location = new System.Drawing.Point(420, 370);
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
@@ -69,7 +69,7 @@
             this.btnUpdateStatus.Location = new System.Drawing.Point(600, 420);
             this.btnUpdateStatus.Click += new System.EventHandler(this.BtnUpdateStatus_Click);
 
-            // Add controls
+            /// Add controls
             this.Controls.Add(this.lblReports);
             this.Controls.Add(this.lstReports);
             this.Controls.Add(this.lblDetails);
