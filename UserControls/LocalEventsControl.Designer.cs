@@ -4,7 +4,17 @@ using System.Windows.Forms;
 namespace MunicipalityV4.UserControls
 {
     /// <summary>
-    /// chat gpt was used to help fix opjects being pointed to related functions and data opgets as it was retuing a loading error on startup and desginer screen 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// ChatGPT was used to help fix objects being pointed to related functions and data objects 
+    /// as it was returning a loading error on startup and designer screen.
+    /// 
+    /// 
+    /// 
+    /// 
     /// </summary>
     partial class LocalEventsControl
     {
@@ -21,6 +31,9 @@ namespace MunicipalityV4.UserControls
         private GroupBox gbFilters;
         private GroupBox gbActions;
 
+        /// <summary>
+        /// Designer method used to initialize and organize controls visually.
+        /// </summary>
         private void InitializeComponent()
         {
             lblHeader = new Label();
@@ -40,10 +53,14 @@ namespace MunicipalityV4.UserControls
             // 
             // lblHeader
             // 
-            lblHeader.Location = new Point(0, 0);
+            lblHeader.AutoSize = true;
+            lblHeader.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblHeader.ForeColor = Color.FromArgb(30, 30, 30);
+            lblHeader.Location = new Point(20, 15);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(100, 23);
+            lblHeader.Size = new Size(267, 30);
             lblHeader.TabIndex = 0;
+            lblHeader.Text = "🏛️ Local Events & Notices";
             // 
             // gbFilters
             // 
@@ -53,94 +70,126 @@ namespace MunicipalityV4.UserControls
             gbFilters.Controls.Add(cbSortBy);
             gbFilters.Controls.Add(btnSearch);
             gbFilters.Controls.Add(btnSort);
-            gbFilters.Location = new Point(0, 0);
+            gbFilters.Font = new Font("Segoe UI", 10F);
+            gbFilters.Location = new Point(20, 60);
             gbFilters.Name = "gbFilters";
-            gbFilters.Size = new Size(200, 100);
+            gbFilters.Padding = new Padding(10);
+            gbFilters.Size = new Size(650, 100);
             gbFilters.TabIndex = 1;
             gbFilters.TabStop = false;
+            gbFilters.Text = "Search and Filter";
             // 
             // cbCategory
             // 
-            cbCategory.Location = new Point(0, 0);
+            cbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCategory.Location = new Point(20, 35);
             cbCategory.Name = "cbCategory";
-            cbCategory.Size = new Size(121, 23);
+            cbCategory.Size = new Size(150, 25);
             cbCategory.TabIndex = 0;
             // 
             // chkDateFilter
             // 
-            chkDateFilter.Location = new Point(0, 0);
+            chkDateFilter.AutoSize = true;
+            chkDateFilter.Location = new Point(190, 38);
             chkDateFilter.Name = "chkDateFilter";
-            chkDateFilter.Size = new Size(104, 24);
+            chkDateFilter.Size = new Size(110, 23);
             chkDateFilter.TabIndex = 1;
+            chkDateFilter.Text = "Filter by Date";
             chkDateFilter.CheckedChanged += chkDateFilter_CheckedChanged;
             // 
             // dtpDate
             // 
-            dtpDate.Location = new Point(0, 0);
+            dtpDate.Enabled = false;
+            dtpDate.Location = new Point(300, 35);
             dtpDate.Name = "dtpDate";
-            dtpDate.Size = new Size(200, 23);
+            dtpDate.Size = new Size(160, 25);
             dtpDate.TabIndex = 2;
+            dtpDate.ValueChanged += dtpDate_ValueChanged;
             // 
             // cbSortBy
             // 
-            cbSortBy.Location = new Point(0, 0);
+            cbSortBy.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbSortBy.Items.AddRange(new object[] { "Date", "Category", "Name" });
+            cbSortBy.Location = new Point(480, 35);
             cbSortBy.Name = "cbSortBy";
-            cbSortBy.Size = new Size(121, 23);
+            cbSortBy.Size = new Size(120, 25);
             cbSortBy.TabIndex = 3;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(0, 0);
+            btnSearch.BackColor = Color.FromArgb(0, 122, 204);
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.ForeColor = Color.White;
+            btnSearch.Location = new Point(20, 70);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(75, 23);
+            btnSearch.Size = new Size(100, 28);
             btnSearch.TabIndex = 4;
+            btnSearch.Text = "🔍 Search";
+            btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
             // 
             // btnSort
             // 
-            btnSort.Location = new Point(0, 0);
+            btnSort.BackColor = Color.FromArgb(40, 167, 69);
+            btnSort.FlatStyle = FlatStyle.Flat;
+            btnSort.ForeColor = Color.White;
+            btnSort.Location = new Point(130, 70);
             btnSort.Name = "btnSort";
-            btnSort.Size = new Size(75, 23);
+            btnSort.Size = new Size(100, 28);
             btnSort.TabIndex = 5;
+            btnSort.Text = "⬆️ Sort";
+            btnSort.UseVisualStyleBackColor = false;
             btnSort.Click += btnSort_Click;
-            
-            /// lvEvents
-            
-            lvEvents.Location = new Point(0, 0);
+            // 
+            // lvEvents
+            // 
+            lvEvents.FullRowSelect = true;
+            lvEvents.GridLines = true;
+            lvEvents.Location = new Point(20, 180);
             lvEvents.Name = "lvEvents";
-            lvEvents.Size = new Size(121, 97);
+            lvEvents.Size = new Size(650, 220);
             lvEvents.TabIndex = 2;
             lvEvents.UseCompatibleStateImageBehavior = false;
-            
-            /// gbActions
-             
+            lvEvents.View = View.Details;
+            // 
+            // gbActions
+            // 
             gbActions.Controls.Add(btnLike);
-            gbActions.Location = new Point(0, 0);
+            gbActions.Font = new Font("Segoe UI", 10F);
+            gbActions.Location = new Point(20, 410);
             gbActions.Name = "gbActions";
-            gbActions.Size = new Size(200, 100);
+            gbActions.Size = new Size(650, 60);
             gbActions.TabIndex = 3;
             gbActions.TabStop = false;
-            
-            /// btnLike
-            
-            btnLike.Location = new Point(0, 0);
+            gbActions.Text = "User Actions";
+            // 
+            // btnLike
+            // 
+            btnLike.BackColor = Color.FromArgb(255, 99, 71);
+            btnLike.FlatStyle = FlatStyle.Flat;
+            btnLike.ForeColor = Color.White;
+            btnLike.Location = new Point(20, 25);
             btnLike.Name = "btnLike";
-            btnLike.Size = new Size(75, 23);
+            btnLike.Size = new Size(130, 28);
             btnLike.TabIndex = 0;
+            btnLike.Text = "Like Event";
+            btnLike.UseVisualStyleBackColor = false;
             btnLike.Click += btnLike_Click;
-            
-            /// LocalEventsControl
-            
+            // 
+            // LocalEventsControl
+            // 
             BackColor = Color.WhiteSmoke;
             Controls.Add(lblHeader);
             Controls.Add(gbFilters);
             Controls.Add(lvEvents);
             Controls.Add(gbActions);
             Name = "LocalEventsControl";
-            Size = new Size(700, 480);
+            Size = new Size(1305, 847);
             gbFilters.ResumeLayout(false);
+            gbFilters.PerformLayout();
             gbActions.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
     }
 }
