@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using MunicipalityV4.UserControls;
 
+
 namespace MunicipalityV4.Forms
 {
     public partial class MainForm : Form
@@ -11,9 +12,7 @@ namespace MunicipalityV4.Forms
             InitializeComponent();
         }
 
-        // ==========================
-        // Navigation Button Handlers
-        // ==========================
+       
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -45,9 +44,6 @@ namespace MunicipalityV4.Forms
             LoadControl(new DashboardControl());
         }
 
-        // ==========================
-        // Load a UserControl dynamically
-        // ==========================
         public void LoadControl(UserControl control)
         {
             mainPanel.Controls.Clear();

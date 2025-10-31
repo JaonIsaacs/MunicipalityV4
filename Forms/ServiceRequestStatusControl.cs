@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using System.Windows.Forms;
-using System.Drawing;
+
 
 namespace MunicipalityV4.UserControls
 {
-    public partial class DashboardControl : UserControl
+    public partial class ServiceRequestStatusControl : UserControl
     {
-        public DashboardControl()
+        public ServiceRequestStatusControl()
         {
             InitializeComponent();
         }
