@@ -11,6 +11,15 @@ namespace MunicipalityV4.Forms
             InitializeComponent();
         }
 
+        // ==========================
+        // Navigation Button Handlers
+        // ==========================
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            LoadControl(new DashboardControl());
+        }
+
         private void btnReportIssue_Click(object sender, EventArgs e)
         {
             LoadControl(new ReportIssueControl());
@@ -21,16 +30,29 @@ namespace MunicipalityV4.Forms
             LoadControl(new LocalEventsControl());
         }
 
+        private void btnServiceRequests_Click(object sender, EventArgs e)
+        {
+            LoadControl(new ServiceRequestStatusControl());
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void logoBox_Click(object sender, EventArgs e)
+        {
+            LoadControl(new DashboardControl());
+        }
+
+        // ==========================
+        // Load a UserControl dynamically
+        // ==========================
         public void LoadControl(UserControl control)
         {
             mainPanel.Controls.Clear();
             control.Dock = DockStyle.Fill;
             mainPanel.Controls.Add(control);
-        }
-
-        private void logoBox_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
