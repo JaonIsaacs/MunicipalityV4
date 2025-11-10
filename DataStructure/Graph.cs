@@ -4,6 +4,8 @@ using System.Linq;
 
 namespace MunicipalityV4.DataStructures
 {
+
+
     public class Graph
     {
         private Dictionary<int, List<(int to, double weight)>> adj = new();
@@ -21,7 +23,11 @@ namespace MunicipalityV4.DataStructures
             adj[from].Add((to, weight));
             adj[to].Add((from, weight));
         }
-
+        /// <summary>
+        /// This section was fixed ith the help of copilot as it was missing in the initial implementation and fixed the code structure overall to make it simplistic
+        /// </summary>
+        /// <param name="start"></param>
+        /// <returns></returns>
         public List<int> BFS(int start)
         {
             var res = new List<int>();
