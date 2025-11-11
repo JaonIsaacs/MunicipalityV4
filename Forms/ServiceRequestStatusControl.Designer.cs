@@ -1,6 +1,9 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
 
+/// <summary>
+/// designer fixed to aid in deleppnment of this section via help of co pilot and fixed matching pointers to functionality wth adition of comments to explain each section
+/// </summary>
 namespace MunicipalityV4.UserControls
 {
     partial class ServiceRequestStatusControl
